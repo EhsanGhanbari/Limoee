@@ -1,0 +1,42 @@
+﻿@model Limoee.Application.CompetitionResponseService.CreateCompetitionResponseCommand
+
+@{
+    ViewBag.Title = "Participate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.UserName)
+    @Html.HiddenFor(x => x.Competition.Id)
+
+    <div>
+        @Html.Label("عنوان مسابقه")
+    </div>
+    <div>
+        @Html.DisplayTextFor(c => c.Competition.Title)
+    </div>
+
+    <div>
+        @Html.Label("پرسشها")
+    </div>
+
+    <div>
+        @for (var i = 0; i < Model.Competition.Questions.Count; i++)
+        {
+            @Html.DisplayTextFor(x => x.Competition.Questions[i].Title)
+
+            foreach (var t in Model.Competition.Questions[i].Answers)
+            {
+                @Html.DisplayFor(c => t.Title)
+                @Html.RadioButtonFor(x => x.Competition.Questions[i].Answers, t.Id)
+                <br />
+            }
+        }
+    </div>
+
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+
+}

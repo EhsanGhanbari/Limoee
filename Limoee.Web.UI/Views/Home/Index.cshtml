@@ -1,0 +1,177 @@
+﻿@using System.Globalization
+
+@{
+    ViewBag.Title = "لیمویی - صفحه اول";
+    Layout = "../Shared/_Layout.cshtml";
+}
+@{
+    var endWeek = DateTime.Now.AddDays(DayOfWeek.Saturday - DateTime.Now.DayOfWeek).Date;
+    var gc = new GregorianCalendar();
+
+    var finalDate = string.Format("{0}/{1}/{2}", gc.GetYear(endWeek), gc.GetMonth(endWeek), gc.GetDayOfMonth(endWeek));
+    
+    var beginWeek = DateTime.Now.AddDays(DateTime.Now.DayOfWeek - DayOfWeek.Saturday - 1).Date;
+
+}
+
+<link href="~/Content/css/animate.css" rel="stylesheet" />
+<link href="~/Content/css/limoee.index.css" rel="stylesheet" />
+<div class="row" id="attention">
+    <div class="col-sm-12" style="padding-top: 25%">
+        <div class="carousel slide" data-ride="carousel" data-pause="">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <h1>تفریح، هیجان و سرگرمی در لیمویی ها</h1>
+                </div>
+                <div class="item">
+                    <h1>
+                        هفته هایی شاد <br />
+                        در سری مسابقات هفتگی لیمویی
+                    </h1>
+                </div>
+                <div class="item">
+                    <h1>هر هفته جایزه، هر هفته برنده!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" >
+    <div class="row">
+        <h1 class="text-center">مسابقه هفته اول</h1>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button class="btn btn-lg btn-success">شرکت در مسابقه این هفته</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center timer">
+            <div class="days-wrapper">
+                <span class="days"></span> <br>روز
+            </div>
+            <div class="hours-wrapper">
+                <span class="hours"></span> <br>ساعت
+            </div>
+            <div class="minutes-wrapper">
+                <span class="minutes"></span> <br>دقیقه
+            </div>
+            <div class="seconds-wrapper">
+                <span class="seconds"></span> <br>ثانیه
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="text-center">
+            شرکت کنندگان این هفته تا کنون: 32,456 نفر
+        </h1>
+    </div>
+    <div class="row">
+        <h2 class="text-center">
+            شروع شده از تاریخ: @beginWeek.ToString("yyyy'/'MM'/'dd") - پایان در تاریخ: @endWeek.ToString("yyyy'/'MM'/'dd")
+        </h2>
+    </div>
+    <div class="row">
+        <h2 class="text-center">تاریخ اعلام اسامی برندگان این هفته: @endWeek.AddDays(1).ToString("yyyy'/'MM'/'dd")</h2>
+    </div>
+
+</div>
+<div class="row" id="interest">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">چرا عضو لیمویی شوم؟</h2>
+                <h3 class="text-center">تفریح و سرگرمی، مسابقات هفتگی</h3>
+            </div>
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-md-3 text-center" id="story-icons">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <img src="~/Images/ribbon.png" class="dd" />
+                        <h3>مسابقه</h3>
+                        <h4>رقابت کنید و برنده شوید</h4>
+                        <p>هر هفته به سوالات مسابقه پاسخ دهید و ببینید به نسبت دیگران در چه سطحی از اطلاعات عمومی هستید</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="~/Images/heart.png" class="story-icon" />
+                        <h3>جایزه</h3>
+                        <h4>هر هفته جایزه داریم</h4>
+                        <p>هر چه بیشتر امتیاز کسب کنی، احتمال اینکه برنده جایزه هفته باشی زیادتر میشه!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center"><img alt="لیمویی ها" src="~/Images/1limon_9.png" /></div>
+            <div class="col-md-3 text-center" id="story-icons">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="~/Images/location.png" />
+                        <h3>دانستنیها</h3>
+                        <h4>گستره دانش خود را افزایش دهید</h4>
+                        <p>ما در موضوعات متنوعی پرسش طرح می کنیم و می توانید دانش خود را به چالش بکشید</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="~/Images/crown.png" />
+                        <h3>قهرمانی</h3>
+                        <h4>مانند یک قهرمان</h4>
+                        <p>امتیازهای لیمویی را درو کنید و قهرمان هر دوره از مسابقات باشید</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="desire" style="height: 100vh; background-color: cornflowerblue">
+    <div class="col-sm-12"></div>
+</div>
+<div class="row" id="conviction" style="height: 100vh; background-color: burlywood">
+    <div class="col-sm-12"></div>
+</div>
+<div class="row" id="action" style="height: 100vh; background-color: chartreuse">
+    <div class="col-sm-12"></div>
+</div>
+
+
+<script src="~/Scripts/jquery.anystretch.min.js"></script>
+<script src="~/Scripts/jquery.countdown.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.carousel').carousel();
+
+        //$('.tlt').textillate({
+        //    in: { effect: 'splat', sync: true },
+        //    out: { effect: 'foldUnfold', sync: true },
+        //    loop: true
+        //});
+        $('#p1').addClass('animated bounceInRight');
+
+        $('#p1').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            $('#p2').addClass('animated bounceInRight');
+
+        });
+
+        $(".timer")
+           .countdown('@finalDate', function (event) {
+               $(this).find('.days').text(event.offset.totalDays);
+               $(this).find('.hours').text(event.offset.hours);
+               $(this).find('.minutes').text(event.offset.minutes);
+               $(this).find('.seconds').text(event.offset.seconds);
+           });
+
+        /*
+        Countdown initializer
+    */
+
+
+    });
+    //$('#attention').anystretch("images/limon-480x300.jpg", { speed: 150 });
+</script>
+

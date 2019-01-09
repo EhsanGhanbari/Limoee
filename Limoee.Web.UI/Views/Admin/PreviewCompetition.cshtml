@@ -1,0 +1,49 @@
+﻿@model Limoee.Application.CompetitionService.EditCompetitionCommand
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    <br />
+    <br />
+    <br />
+    <div>
+        <span>عنوان مسابقه</span>
+        @Html.DisplayTextFor(c => c.Title)
+    </div>
+
+    <div>
+        <span>شرح مسابقه </span>
+        @Html.DisplayTextFor(c => c.Description)
+    </div>
+
+    <div>
+        <span>تاریخ شروع مسابقه </span>
+        @Html.DisplayTextFor(c => c.StartDate)
+    </div>
+
+    <div>
+        <span>تاریخ پایان مسابقه </span>
+        @Html.DisplayTextFor(c => c.EndDate)
+    </div>
+
+    <div>
+        <span>تاریخ پایان مسابقه </span>
+        @Html.DisplayTextFor(c => c.EndDate)
+    </div>
+
+    <div>
+        <span>تاریخ پایان مسابقه </span>
+        @for (int i = 0; i < Model.Questions.Count; i++)
+        {
+            <span>Title</span> @Html.DisplayTextFor(c => c.Questions[i].Title)
+            <span>Category</span>         @Html.DisplayTextFor(c => c.Questions[i].Category)
+            <span>Answer</span>    @Html.DisplayTextFor(c => c.Questions[i].Answers)
+            <br />
+            <br />
+        }
+
+    </div>
+}

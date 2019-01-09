@@ -1,0 +1,63 @@
+﻿@model  Limoee.Application.BannerService.CreateBannerCommand
+
+@{
+    ViewBag.Title = "Create Banner";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>ایجاد یک بنر جدید</h2>
+
+@using (Ajax.BeginForm("CreateBanner", "Admin", new AjaxOptions(), new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.Label("نام آگهی دهنده")
+        @Html.TextBoxFor(b => b.Advertiser, new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.Advertiser)
+    </div>
+    <div class="form-group">
+        @Html.Label("هزینه آگهی دهنده")
+        @Html.TextBoxFor(b => b.AdvertisementCost, new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.AdvertisementCost)
+    </div>
+    <div class="form-group">
+        @Html.Label("آدرس سایت")
+        @Html.TextBoxFor(b => b.AdvertiserHomePage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.AdvertiserHomePage)
+    </div>
+    <div class="form-group">
+        @Html.Label("ابعاد بنر")
+        @Html.EnumDropDownListFor(b => b.BannerImage.Type, new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.BannerImage.Type)
+    </div>
+
+    <div class="form-group">
+        <label>فایل: </label>
+        <input type="file" name="file" />
+    </div>
+
+    <div class="form-group">
+        @Html.Label("فعال سازی")
+        @Html.CheckBoxFor(b => b.IsActive)
+    </div>
+
+    <div class="form-group">
+        @Html.Label("تاریخ شروع نمایش")
+        @Html.TextBoxFor(b => b.StartDate, new { @class = "form-control",type = "date"  })
+        @Html.ValidationMessageFor(b => b.StartDate)
+    </div>
+    <div class="form-group">
+        @Html.Label("تاریخ پایان نمایش")
+        @Html.TextBoxFor(b => b.EndDate, new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(b => b.EndDate)
+    </div>
+    <div class="form-group">
+        @Html.Label("محل نمایش")
+        @Html.RadioButtonFor(b => b.DisplayArea, "Top", true) بالا
+        @Html.RadioButtonFor(b => b.DisplayArea, "Left", true) چپ
+        @Html.ValidationMessageFor(b => b.DisplayArea)
+    </div>
+
+    <div class="form-group"></div>
+
+    <button type="submit" class="btn btn-primary">ذخیره</button>
+}

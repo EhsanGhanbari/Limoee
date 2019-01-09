@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Limoee.Application.BannerService.BannerDTO>
+
+@foreach (var item in Model)
+{
+    <div>
+        <a href="@item.AdvertiserHomePage">
+            <img src="@Url.Content(item.BannerImage.Path + "/" + item.BannerImage.Name)" style="width:100px; height: 100px " />
+        </a>
+    </div>
+}

@@ -1,0 +1,150 @@
+﻿@model Limoee.Application.CompetitionService.EditCompetitionCommand
+
+@{
+    ViewBag.Title = "ویرایش مسابقه";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div ng-app="LimoeeApp">
+    <h2>ایجاد یک مسابقه جدید</h2>
+    <div class="row" ng-controller="CreateCompetiotionCtrl">
+
+        @using (Ajax.BeginForm(null, null, null, new AjaxOptions() { OnComplete = "ShowWebMessage" }, new { @class = "form-horizontal" }))
+        {
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="Title">عنوان مسابقه</label>
+                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control", placeholder = "عنوان مسابقه" })
+                        @Html.ValidationMessageFor(x => x.Title)
+                    </div>
+                    <div class="form-group">
+                        <label for="Description">شرح و توضیحات</label>
+                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control ckeditor", placeholder = "توضیحات" })
+                        @Html.ValidationMessageFor(x => x.Description)
+                    </div>
+                    <div class="form-group">
+                        <label for="StartDate">تاریخ شروع</label>
+                        @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control", placeholder = "تاریخ شروع", type = "data" })
+                        @Html.ValidationMessageFor(x => x.StartDate)
+                    </div>
+                    <div class="form-group">
+                        <label for="EndDate">تاریخ پایان</label>
+                        @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control", placeholder = "تاریخ خاتمه", type = "data" })
+                        @Html.ValidationMessageFor(x => x.EndDate)
+                    </div>
+                </div>
+                <div class="col-sm-9">
+
+                    <div class="page-header">
+                        <label> پرسشها</label>
+                        <button type="button" class="btn btn-sm btn-success pull-left fa fa-plus-circle" ng-click="AddQuestion()">&nbsp; افزودن پرسش</button>
+                    </div>
+
+                    <div class="form-group" ng-repeat="item in Questions" ng-class="{'alert alert-success': $even, 'alert alert-info': $odd}">
+                        <div class="panel panel-default">
+                            <button type="button" title="حذف پرسش" class="btn btn-sm btn-warning pull-left fa fa-trash-o" ng-click="RemoveQuestion({{$index}})"></button>
+
+                            <div class="panel-body">
+                                <select ng-required name="Questions[{{$index}}].Category" ng-model="item.Category" class="form-control">
+                                    <option value="ورزشی">ورزشی</option>
+                                    <option value="سینما">سینما</option>
+                                    <option value="فرهنگی - ادبی">فرهنگی - ادبی</option>
+                                    <option value="موسیقی">موسیقی</option>
+                                    <option value="هوش">هوش</option>
+                                    <option value="علم و فناوری">علم و فناوری</option>
+                                </select>
+                             
+                                @for (int i = 0; i < Model.Questions.Count; i++)
+                                {
+                                    @Html.TextAreaFor(x => x.Questions[i].Title, new { @class = "form-control ckeditor", placeholder = "توضیحات" })
+                                    @Html.ValidationMessageFor(x => x.Questions)
+                                }
+                               
+                                <div>
+                                    <label> پاسخها</label>
+                                    <button ng-click="AddAnswer($index)" type="button" class="btn btn-info btn-sm fa fa-plus-circle pull-left">&nbsp; افزودن پاسخ</button>
+
+                                </div>
+                                <div ng-repeat="answer in item.Answers">
+                                    <div class="form-group">
+                                        <a href="" ng-click="RemoveAnswer($parent.$index,$index)" class="fa fa-trash-o"></a>
+                                        <label for="Questions[{{$parent.$index}}].Answers[{{$index}}].Title" class="col-sm-1 control-label">پاسخ </label>
+                                        <div class="col-sm-11">
+                                           @* <textarea title="متن پرسش می تواند به صورت کد اچ تی ام ال نیز باشد" ng-required name="Questions[{{$parent.$index}}].Answers[{{$index}}].Title" id="Questions[{{$parent.$index}}]_Answers[{{$index}}]_Title" ng-model="answer.Title" class="form-control ckeditor"></textarea>*@
+                                            @for (int i = 0; i < Model.Questions.Count; i++)
+                                            {
+                                                @Html.TextAreaFor(x => x.Questions[i].Title, new { @class = "form-control ckeditor", placeholder = "توضیحات" })
+                                                @Html.ValidationMessageFor(x => x.Questions)
+                                            }
+
+                                          </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Questions[{{$parent.$index}}].Answers[{{$index}}].Title" class="col-sm-1 control-label">ترتیب</label>
+                                        <div class="col-sm-3">
+                                            <input title="ترتیب  در لیست نمایش" type="number" placeholder="ترتیب نمایش" ng-required name="Questions[{{$parent.$index}}].Answers[{{$index}}].Order" ng-model="answer.Order" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <hr style="color: blueviolet; border: 1px solid cadetblue" />
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col-md-12">
+                    <div class="form-group">
+                        <button type="submit" name="EditCompetition" class="btn btn-primary btn-lg text-center">ذخیره</button>
+                        <button type="submit" name="PreviewCompetition" class="btn btn-primary btn-lg text-center">پیش نمایش</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script type="text/javascript">
+
+    var LimoeeApp = angular.module('LimoeeApp', []);
+
+    var CreateCompetiotionCtrl = function ($scope) {
+        $scope.Questions = [
+            {
+                'Category': '',
+                'Answers': []
+            }
+        ];
+
+        $scope.AddQuestion = function () {
+            $scope.Questions.push({
+                'Category': '',
+                'Answers': []
+            });
+        }
+
+        $scope.AddAnswer = function (qIndex) {
+            $scope.Questions[qIndex].Answers.push({
+                'Order': 1,
+                'Title': ''
+            });
+
+        }
+
+        $scope.RemoveAnswer = function (qIndex, aIndex) {
+            $scope.Questions[qIndex].Answers.splice(aIndex, 1);
+        }
+
+        $scope.RemoveQuestion = function (qIndex) {
+            $scope.Questions.splice(qIndex, 1);
+        }
+    }
+
+
+</script>
+
+
+
+
+

@@ -1,0 +1,133 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limoee.Infrastructure", "Limoee.Infrastructure\Limoee.Infrastructure.csproj", "{F3CA5C0A-2784-427A-86D7-453495E52249}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limoee.Repository", "Limoee.Repository\Limoee.Repository.csproj", "{D63C2EBD-D291-4850-9A3E-3A5D7A7B62BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limoee.Domain", "Limoee.Domain\Limoee.Domain.csproj", "{2363ED81-9D65-4D0C-80F9-961407701502}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limoee.Application", "Limoee.Application\Limoee.Application.csproj", "{5C6F4C84-31C7-4E99-9866-201CA64141B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limoee.Web.UI", "Limoee.Web.UI\Limoee.Web.UI.csproj", "{A2D79D25-8CE8-4705-9B3C-75E741B98B17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. UI", "1. UI", "{42CFA9F4-2B78-44EC-99E9-CF58FDCC191A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. App", "2. App", "{1A053255-314F-414A-B93A-0B41DC0B4B7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Domain", "3. Domain", "{5936E5C0-0638-4D01-B95A-26712D8CB0F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Repository", "4. Repository", "{BA627D92-A67C-43B1-86BF-F7E8ADB9F7B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Infrastracture", "5. Infrastracture", "{03671028-A7EC-4237-961A-557F77E3FC94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limoee.Repository.Test", "Limoee.Repository.Test\Limoee.Repository.Test.csproj", "{0C6A5E66-3534-48BF-9A1F-5E23B0CDAE5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limoee.Domain.Test", "Limoee.Domain.Test\Limoee.Domain.Test.csproj", "{560ACA6B-452A-40AE-81C2-B669B03DAE2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limoee.Application.Test", "Limoee.Application.Test\Limoee.Application.Test.csproj", "{D868974A-1096-4353-AB6A-23047F00A87D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limoee.Web.UI.Test", "Limoee.Web.UI.Test\Limoee.Web.UI.Test.csproj", "{DA04B0CC-C6E1-4A44-AAB5-61BB1B507390}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://porseman.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Limoee.Domain\\Limoee.Domain.csproj
+		SccProjectTopLevelParentUniqueName1 = Limoee.sln
+		SccProjectName1 = Limoee.Domain
+		SccLocalPath1 = Limoee.Domain
+		SccProjectUniqueName2 = Limoee.Infrastructure\\Limoee.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName2 = Limoee.sln
+		SccProjectName2 = Limoee.Infrastructure
+		SccLocalPath2 = Limoee.Infrastructure
+		SccProjectUniqueName3 = Limoee.Repository\\Limoee.Repository.csproj
+		SccProjectTopLevelParentUniqueName3 = Limoee.sln
+		SccProjectName3 = Limoee.Repository
+		SccLocalPath3 = Limoee.Repository
+		SccProjectUniqueName4 = Limoee.Application\\Limoee.Application.csproj
+		SccProjectTopLevelParentUniqueName4 = Limoee.sln
+		SccProjectName4 = Limoee.Application
+		SccLocalPath4 = Limoee.Application
+		SccProjectUniqueName5 = Limoee.Web.UI\\Limoee.Web.UI.csproj
+		SccProjectTopLevelParentUniqueName5 = Limoee.sln
+		SccProjectName5 = Limoee.Web.UI
+		SccLocalPath5 = Limoee.Web.UI
+		SccProjectUniqueName6 = Limoee.Repository.Test\\Limoee.Repository.Test.csproj
+		SccProjectTopLevelParentUniqueName6 = Limoee.sln
+		SccProjectName6 = Limoee.Repository.Test
+		SccLocalPath6 = Limoee.Repository.Test
+		SccProjectUniqueName7 = Limoee.Domain.Test\\Limoee.Domain.Test.csproj
+		SccProjectTopLevelParentUniqueName7 = Limoee.sln
+		SccProjectName7 = Limoee.Domain.Test
+		SccLocalPath7 = Limoee.Domain.Test
+		SccProjectUniqueName8 = Limoee.Application.Test\\Limoee.Application.Test.csproj
+		SccProjectTopLevelParentUniqueName8 = Limoee.sln
+		SccProjectName8 = Limoee.Application.Test
+		SccLocalPath8 = Limoee.Application.Test
+		SccProjectUniqueName9 = Limoee.Web.UI.Test\\Limoee.Web.UI.Test.csproj
+		SccProjectTopLevelParentUniqueName9 = Limoee.sln
+		SccProjectName9 = Limoee.Web.UI.Test
+		SccLocalPath9 = Limoee.Web.UI.Test
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3CA5C0A-2784-427A-86D7-453495E52249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3CA5C0A-2784-427A-86D7-453495E52249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3CA5C0A-2784-427A-86D7-453495E52249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3CA5C0A-2784-427A-86D7-453495E52249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D63C2EBD-D291-4850-9A3E-3A5D7A7B62BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D63C2EBD-D291-4850-9A3E-3A5D7A7B62BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D63C2EBD-D291-4850-9A3E-3A5D7A7B62BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D63C2EBD-D291-4850-9A3E-3A5D7A7B62BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2363ED81-9D65-4D0C-80F9-961407701502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2363ED81-9D65-4D0C-80F9-961407701502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2363ED81-9D65-4D0C-80F9-961407701502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2363ED81-9D65-4D0C-80F9-961407701502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C6F4C84-31C7-4E99-9866-201CA64141B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C6F4C84-31C7-4E99-9866-201CA64141B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C6F4C84-31C7-4E99-9866-201CA64141B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C6F4C84-31C7-4E99-9866-201CA64141B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D79D25-8CE8-4705-9B3C-75E741B98B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D79D25-8CE8-4705-9B3C-75E741B98B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D79D25-8CE8-4705-9B3C-75E741B98B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D79D25-8CE8-4705-9B3C-75E741B98B17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C6A5E66-3534-48BF-9A1F-5E23B0CDAE5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C6A5E66-3534-48BF-9A1F-5E23B0CDAE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C6A5E66-3534-48BF-9A1F-5E23B0CDAE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C6A5E66-3534-48BF-9A1F-5E23B0CDAE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{560ACA6B-452A-40AE-81C2-B669B03DAE2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{560ACA6B-452A-40AE-81C2-B669B03DAE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{560ACA6B-452A-40AE-81C2-B669B03DAE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{560ACA6B-452A-40AE-81C2-B669B03DAE2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D868974A-1096-4353-AB6A-23047F00A87D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D868974A-1096-4353-AB6A-23047F00A87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D868974A-1096-4353-AB6A-23047F00A87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D868974A-1096-4353-AB6A-23047F00A87D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA04B0CC-C6E1-4A44-AAB5-61BB1B507390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA04B0CC-C6E1-4A44-AAB5-61BB1B507390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA04B0CC-C6E1-4A44-AAB5-61BB1B507390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA04B0CC-C6E1-4A44-AAB5-61BB1B507390}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F3CA5C0A-2784-427A-86D7-453495E52249} = {03671028-A7EC-4237-961A-557F77E3FC94}
+		{D63C2EBD-D291-4850-9A3E-3A5D7A7B62BF} = {BA627D92-A67C-43B1-86BF-F7E8ADB9F7B7}
+		{0C6A5E66-3534-48BF-9A1F-5E23B0CDAE5F} = {BA627D92-A67C-43B1-86BF-F7E8ADB9F7B7}
+		{2363ED81-9D65-4D0C-80F9-961407701502} = {5936E5C0-0638-4D01-B95A-26712D8CB0F4}
+		{560ACA6B-452A-40AE-81C2-B669B03DAE2D} = {5936E5C0-0638-4D01-B95A-26712D8CB0F4}
+		{5C6F4C84-31C7-4E99-9866-201CA64141B5} = {1A053255-314F-414A-B93A-0B41DC0B4B7F}
+		{D868974A-1096-4353-AB6A-23047F00A87D} = {1A053255-314F-414A-B93A-0B41DC0B4B7F}
+		{A2D79D25-8CE8-4705-9B3C-75E741B98B17} = {42CFA9F4-2B78-44EC-99E9-CF58FDCC191A}
+		{DA04B0CC-C6E1-4A44-AAB5-61BB1B507390} = {42CFA9F4-2B78-44EC-99E9-CF58FDCC191A}
+	EndGlobalSection
+EndGlobal

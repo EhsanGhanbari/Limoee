@@ -1,0 +1,27 @@
+﻿@model Limoee.Infrastructure.Domain.PagedResult<Limoee.Application.CompetitionService.CompetitionDTO>
+
+@{
+    ViewBag.Title = "فهرست مسابقات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>فهرست مسابقات</h2>
+
+
+@foreach (var item in Model.Results)
+{
+    @item.Title
+    <br />
+    @Html.Raw(item.Description)
+    <br />
+    @item.StartDate
+    <br />
+    @item.EndDate
+    <br />
+    @Html.ActionLink("شرکت در مسابقه", "Participate", "Competition", new { id = item.Id }, null)
+    <br/>
+    <br/>
+}
+@Html.Pager(Model.PageSize, Model.CurrentPage, Model.TotalCount).Options(o => o.Action("Competitions").PageRouteValueKey("pageindex").AddRouteValue("pagesize", Model.PageSize).DisplayTemplate("Bootstrap3Pagination")
+)
+
+

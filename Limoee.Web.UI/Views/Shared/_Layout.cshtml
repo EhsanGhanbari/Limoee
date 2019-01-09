@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - لیمویی</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angularjs")
+    <style>
+        body * {
+            font-family: 'BYekan', tahoma, Arial;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("لیمویی", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">@RenderBody()</div>
+        </div>
+
+        @*<div id="leftContainer"></div>
+            <div id="topContainer"></div>*@
+    </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - limoee.com</p>
+    </footer>
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>
+
+<script>
+    $(function () {
+        {
+            $.ajax({
+                url: '@Url.Action("LeftSideBanners","Home")',
+                type: 'GET',
+                cache: false,
+            }).done(function (result) {
+                $('#leftContainer').html(result);
+            });
+            $.ajax({
+                url: '@Url.Action("TopSideBanners", "Home")',
+                type: 'GET',
+                cache: false,
+            }).done(function (result) {
+                $('#topContainer').html(result);
+            });
+        }
+    });
+
+</script>
+
+
+
+
